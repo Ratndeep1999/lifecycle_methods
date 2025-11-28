@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LifecycleMethods extends StatefulWidget {
-  LifecycleMethods({Key? key}) : super(key: key) {
-    debugPrint('Constructor called');
+  LifecycleMethods({super.key}) {
+    debugPrint('constructor called\n');
   }
 
   @override
@@ -27,7 +27,7 @@ class LifecycleMethodsState extends State<LifecycleMethods> {
 
   @override
   void didUpdateWidget(LifecycleMethods oldWidget) {
-    debugPrint('didUpdateWidget called');
+    debugPrint('\ndidUpdateWidget() called');
     super.didUpdateWidget(oldWidget);
   }
 
@@ -64,3 +64,36 @@ class LifecycleMethodsState extends State<LifecycleMethods> {
     );
   }
 }
+
+/// First time run
+// I/flutter (27432): constructor called
+// I/flutter (27432):
+// I/flutter (27432): createState() called
+// I/flutter (27432): initState() called
+// I/flutter (27432): didChangeDependencies() called
+// I/flutter (27432): build() called
+
+/// setState() called
+// I/flutter (27432): setState() called
+// I/flutter (27432): build() called
+
+/// Hot Reload
+// I/flutter (27432): constructor called
+// I/flutter (27432):
+// I/flutter (27432):
+// I/flutter (27432): didUpdateWidget() called
+// I/flutter (27432): build() called
+
+/// Hot Restart
+// I/flutter (27432): constructor called
+// I/flutter (27432):
+// I/flutter (27432): createState() called
+// I/flutter (27432): initState() called
+// I/flutter (27432): didChangeDependencies() called
+// I/flutter (27432): build() called
+// I/flutter (27432): constructor called
+// I/flutter (27432):
+// I/flutter (27432):
+// I/flutter (27432): didUpdateWidget() called
+// I/flutter (27432): build() called
+
