@@ -10,7 +10,19 @@ class LifecycleMethods extends StatefulWidget {
 }
 
 class LifecycleMethodsState extends State<LifecycleMethods> {
-
   @override
-  Widget build(BuildContext context) => Scaffold();
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: Text('Lifecycle Methods'), centerTitle: true),
+    body: SafeArea(
+      child: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            /// setState to call build()
+            setState(() {});
+          },
+          child: Text('set state'),
+        ),
+      ),
+    ),
+  );
 }
