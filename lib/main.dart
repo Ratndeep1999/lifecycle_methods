@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lifecycle_methods/home_page.dart';
-import 'package:lifecycle_methods/lifecycle_methods.dart';
 
 void main() {
   runApp(const MyApp());
