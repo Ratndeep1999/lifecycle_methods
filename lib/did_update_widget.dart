@@ -61,11 +61,12 @@ class ChildWidget extends StatefulWidget {
 
 /// Child Widget State
 class ChildWidgetState extends State<ChildWidget> {
-  late int index = 0;
+  late int index;
 
   @override
   void initState() {
     debugPrint('initState() Called');
+    _initialize();
     super.initState();
   }
 
@@ -99,6 +100,7 @@ class ChildWidgetState extends State<ChildWidget> {
 
   // It initialize index
   _initialize() {
+    debugPrint('_initialize() Called');
     index = 0;
   }
 
