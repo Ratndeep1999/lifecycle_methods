@@ -48,10 +48,13 @@ class ParentWidgetState extends State<ParentWidget> {
 class ChildWidget extends StatefulWidget {
   final bool isUpdateWidget;
 
-  const ChildWidget({super.key, required this.isUpdateWidget});
+  ChildWidget({super.key, required this.isUpdateWidget}) {
+    debugPrint('ChildWidget Constructor Called');
+  }
 
   @override
   State<ChildWidget> createState() {
+    debugPrint('createState() Called');
     return ChildWidgetState();
   }
 }
@@ -60,6 +63,40 @@ class ChildWidget extends StatefulWidget {
 class ChildWidgetState extends State<ChildWidget> {
   late int index = 0;
 
+  @override
+  void initState() {
+    debugPrint('initState() Called');
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    debugPrint('didChangeDependencies() Called');
+    super.didChangeDependencies();
+  }
+
+  @override
+  void didUpdateWidget(ChildWidget oldWidget) {
+    debugPrint('didUpdateWidget() Called');
+
+    if (widget.isUpdateWidget != oldWidget.isUpdateWidget){
+      _initialize();
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void deactivate() {
+    debugPrint('deactivated() Called');
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    debugPrint('dispose() Called');
+    super.dispose();
+  }
+
   // It initialize index
   _initialize() {
     index = 0;
@@ -67,6 +104,7 @@ class ChildWidgetState extends State<ChildWidget> {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('Build() Called');
     return SafeArea(
       child: Column(
         children: [
