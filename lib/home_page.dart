@@ -20,13 +20,13 @@ class HomePage extends StatelessWidget {
               /// Lifecycle methods
               CustomButton(
                 label: 'Lifecycle Methods',
-                onPress: _navigateToLifecyclePage(context),
+                onPress: ()=> _navigateToLifecyclePage(context),
               ),
 
               /// DidUpdateWidget Demo
               CustomButton(
                 label: 'didUpdateWidget() demo',
-                onPress: _navigateToDidUpdateWidgetDemo(context),
+                onPress: ()=> _navigateToDidUpdateWidgetDemo(context),
               ),
             ],
           ),
@@ -39,12 +39,12 @@ class HomePage extends StatelessWidget {
   _navigateToLifecyclePage(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => LifecycleMethods()),
+      MaterialPageRoute(builder: (context) => LifecycleMethods()),
     );
   }
 
   /// DidUpdateWidget demo Page
   _navigateToDidUpdateWidgetDemo(context) {
-    Navigator.push(context, MaterialPageRoute(builder: (_) => ParentWidget()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ParentWidget()));
   }
 }
