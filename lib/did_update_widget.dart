@@ -128,3 +128,22 @@ class ChildWidgetState extends State<ChildWidget> {
     );
   }
 }
+
+/// When Page Load at First Time
+// I/flutter (25831): ChildWidget Constructor Called
+// I/flutter (25831): createState() Called
+// I/flutter (25831): initState() Called
+// I/flutter (25831): _initialize() Called
+// I/flutter (25831): didChangeDependencies() Called
+// I/flutter (25831): Build() Called Counting : 0
+
+/// When setState() called twice
+// I/flutter (25831): Build() Called Counting : 1
+// I/flutter (25831): Build() Called Counting : 2
+
+/// When Parent State Change the, Child change only Widget State
+// I/flutter (25831): ChildWidget Constructor Called
+// I/flutter (25831): didUpdateWidget() Called
+// I/flutter (25831): _initialize() Called
+// I/flutter (25831): Build() Called Counting : 0
+
