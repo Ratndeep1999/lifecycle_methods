@@ -33,7 +33,7 @@ class LifecycleMethodsState extends State<LifecycleMethods> {
 
   @override
   void deactivate() {
-    debugPrint('deactivate() called');
+    debugPrint('\ndeactivate() called');
     super.deactivate();
   }
 
@@ -53,7 +53,9 @@ class LifecycleMethodsState extends State<LifecycleMethods> {
           child: ElevatedButton(
             onPressed: () {
               /// setState to call build()
-              setState(() {});
+              setState(() {
+                debugPrint('\nsetState() called');
+              });
             },
             child: Text('set state'),
           ),
