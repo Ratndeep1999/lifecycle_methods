@@ -11,6 +11,31 @@ class LifecycleMethods extends StatefulWidget {
 
 class LifecycleMethodsState extends State<LifecycleMethods> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
+  void didUpdateWidget(LifecycleMethods oldWidget) {
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void deactivate() {
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: Text('Lifecycle Methods'), centerTitle: true),
     body: SafeArea(
