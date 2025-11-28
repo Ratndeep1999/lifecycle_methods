@@ -17,7 +17,11 @@ class ParentWidgetState extends State<ParentWidget> {
       appBar: AppBar(title: Text('didUpdateWidget() Demo'), centerTitle: true),
       body: SafeArea(
         child: Center(
-          child: CustomButton(label: 'Change in Parent class', onPress: () {}),
+          child: Column(
+            children: [
+              CustomButton(label: 'Change in Parent class', onPress: () {}),
+            ],
+          ),
         ),
       ),
     );
